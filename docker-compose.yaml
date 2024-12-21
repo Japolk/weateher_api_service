@@ -1,0 +1,17 @@
+services:
+  app:
+    container_name: weather_api_project
+    build:
+      context: .
+    ports:
+      - '8000:80'
+    env_file:
+      - .env
+    environment:
+      OPENWEATHER_API_KEY: ${OPENWEATHER_API_KEY}
+      MAX_CALLS_PER_MIN: ${MAX_CALLS_PER_MIN}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
+      S3_BUCKET_NAME: ${S3_BUCKET_NAME}
+      DYNAMODB_TABLE: ${DYNAMODB_TABLE}
